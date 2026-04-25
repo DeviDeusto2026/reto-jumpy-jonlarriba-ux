@@ -10,6 +10,7 @@ public class LogicScript : MonoBehaviour
     private Camera cam;
 
     public GameObject winObject;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -35,7 +36,7 @@ public class LogicScript : MonoBehaviour
     {
         if(collision.gameObject.tag == "Win")
         {
-            Debug.Log("Win");
+            SceneManager.LoadScene("Win");
         }
 
     }
