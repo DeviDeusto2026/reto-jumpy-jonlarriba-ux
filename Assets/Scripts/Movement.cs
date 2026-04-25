@@ -1,8 +1,12 @@
+using UnityEditor.SceneManagement;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
     public bool canJump = true;
+    public bool rising = false;
+
+    public float posY = 0;
     public int speed = 30;
     public int jumpForce = 300;
 
@@ -39,11 +43,31 @@ public class Movement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && canJump)
         {
             rb.AddForce(transform.up * jumpForce);
-            Debug.Log("Jump");
+            rising = true;
+            posY = gameObject.transform.position.y;
         }
-        if (Input.GetKeyDown(KeyCode.Space))
+        checkMaxHeight();
+
+        if(rising == true)
         {
-            Debug.Log("KeyPressed");
+            rb.excludeLayers = 64; // This must be written in binary, because each one means an activation of a different layer.
+            Debug.Log(LayerMask.NameToLayer("Ground"));
+        }
+        else
+        {
+            rb.excludeLayers = 0; //This means nothing
+        }
+
+    }
+
+    /**
+     * Checks when the max height was reached after a jump. When so, the status of rising is deactivated.
+     **/ 
+    private void checkMaxHeight()
+    {
+        if (posY + jumpForce/112.5 <= this.transform.position.y)
+        {
+            rising = false;
         }
     }
 
