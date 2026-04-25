@@ -20,13 +20,13 @@ public class LogicScript : MonoBehaviour
     {
         if (isVisible())
         {
-            Debug.Log("In Camera");
+            //Debug.Log("In Camera");
         }
         else
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             //https://youtu.be/kn7rL8Jeexo?si=8dglj940CHcyF67s
-            Debug.Log("Outside Camera");
+            //Debug.Log("Outside Camera");
         }
     }
 
@@ -35,7 +35,15 @@ public class LogicScript : MonoBehaviour
         //Get every single plane of the camera frustrum
         Plane[] planes = GeometryUtility.CalculateFrustumPlanes(cam);
         //Return true if the object is inside every single plane of the frustrum
-        return planes.All(plane => plane.GetDistanceToPoint(target.transform.position) >= 0);
+            if (planes[2].GetDistanceToPoint(target.transform.position) >= 0) 
+            {
+                return true;
+            }
+        else
+        {
+            return false;
+        }
+            
         //https://youtu.be/38BtpQWEct4?si=TkqhBBqhTodTv0j- 
     }
 /**
@@ -50,4 +58,6 @@ public class LogicScript : MonoBehaviour
 }
 **/
 
+    //Lambda alternative:
+    //return planes.All(plane => plane.GetDistanceToPoint(target.transform.position) >= 0);
 }

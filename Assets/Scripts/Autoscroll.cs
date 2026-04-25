@@ -8,6 +8,6 @@ public class Autoscroll : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.transform.position = this.transform.position + Vector3.up * speed;
+        this.transform.position = this.transform.position + Vector3.up * speed * Time.deltaTime;
     }
 }
