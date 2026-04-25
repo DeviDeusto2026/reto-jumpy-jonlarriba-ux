@@ -9,6 +9,7 @@ public class LogicScript : MonoBehaviour
     [SerializeField]
     private Camera cam;
 
+    public GameObject winObject;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -28,6 +29,15 @@ public class LogicScript : MonoBehaviour
             //https://youtu.be/kn7rL8Jeexo?si=8dglj940CHcyF67s
             //Debug.Log("Outside Camera");
         }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Win")
+        {
+            Debug.Log("Win");
+        }
+
     }
 
     private bool isVisible()

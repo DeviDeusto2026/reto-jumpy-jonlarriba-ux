@@ -621,7 +621,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlatformSpawning
   firstPlatform: {fileID: 780078232}
-  numberOfPlatforms: 10
+  numberOfPlatforms: 2
   platformToInstantiate: {fileID: 780078227}
   finalPlatform: {fileID: 664517484}
 --- !u!4 &621571426
@@ -984,7 +984,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f94608f0f804f3478f81189096b0ca0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Autoscroll
-  speed: 10
+  speed: 1
 --- !u!1 &1971008218 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3501913615090349002, guid: 13aca049c67820644ba390980277e1e1, type: 3}
@@ -1069,6 +1069,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LogicScript
   target: {fileID: 1971008218}
   cam: {fileID: 1401178147}
+  winObject: {fileID: 664517484}
 --- !u!1001 &3503230331243135894
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1376,6 +1377,10 @@ PrefabInstance:
     - target: {fileID: 3503230330167827866, guid: 13aca049c67820644ba390980277e1e1, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3503230330167827866, guid: 13aca049c67820644ba390980277e1e1, type: 3}
+      propertyPath: m_TagString
+      value: Win
       objectReference: {fileID: 0}
     - target: {fileID: 3503230330167827867, guid: 13aca049c67820644ba390980277e1e1, type: 3}
       propertyPath: m_RootOrder
@@ -1800,6 +1805,14 @@ PrefabInstance:
     - target: {fileID: 3503230331010298774, guid: 13aca049c67820644ba390980277e1e1, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3503230331010298774, guid: 13aca049c67820644ba390980277e1e1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3503230331010298774, guid: 13aca049c67820644ba390980277e1e1, type: 3}
+      propertyPath: m_TagString
+      value: Win
       objectReference: {fileID: 0}
     - target: {fileID: 3503230331010301230, guid: 13aca049c67820644ba390980277e1e1, type: 3}
       propertyPath: m_Layer
